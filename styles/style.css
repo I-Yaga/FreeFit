@@ -1,0 +1,748 @@
+@font-face {
+    font-family: 'Montserrat-Bold'; 
+    src: url('../fonts/[SLIV.SITE]\ Montserrat-Bold.ttf') format('truetype');
+  }
+
+@font-face {
+    font-family: 'Montserrat-Regular'; 
+    src: url('../fonts/[SLIV.SITE]\ Montserrat-Regular.ttf') format('truetype');
+  }
+
+:root {
+    --montserrat-bold: "Montserrat-Bold";
+    --montserrat-regular: "Montserrat-Regular";
+
+    --light: #F3F3F3;
+    --accent: #FBF138;
+    --dark: #2B3541;
+
+    --tr: 0.2s;
+}
+
+body {
+    font-family: var(--montserrat-regular);
+    color: var(--dark);
+  }
+  
+a {
+    text-decoration: none;
+  }
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+/* Header */
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 92px;
+  padding-top: 50px;
+  padding-bottom: 27px;
+}
+
+.logo {
+  display: block;
+  width: 97px;
+  height: 30px;
+  background-image: url(../icons/[SLIV.SITE]\ logo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.burger-menu {
+  display: none;
+  width: 29px;
+  height: 22px;
+  background-image: url(../icons/burger-menu.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+}
+
+.nav {
+  display: flex;
+  flex-grow: 1;
+  gap: 54px;
+}
+
+.nav-link {
+  color: var(--dark);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: transparent;
+  border-radius: 1px;
+  transition: var(--tr);
+}
+
+.nav-link:hover::after {
+  background-color: var(--dark);
+}
+
+.email {
+  display: flex;
+  color: var(--dark);
+  font-family: var(--montserrat-bold);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.email::before {
+  content: "";
+  display: block;
+  width: 75px;
+  height: 75px;
+  background-image: url(../icons/Ellipse.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  z-index: -1;
+  left: -34px;
+  top: -13px;
+}
+
+/* Hero */
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+.hero-text {
+  flex-basis: 60%;
+}
+.hero-text h1 {
+  font-size: clamp(26px, 4.5vw ,48px);
+}
+.hero-bg {
+  height: clamp(493px, 50vw, 852px);
+  flex-basis: calc(40% - 20px);
+  opacity: 0.2;
+  background: linear-gradient(90deg, #FBF138 0%, rgba(253, 249, 182, 0.45) 145.23%);
+}
+
+.hero img {
+  position: absolute;
+  right: -10vw;
+  bottom: 0;
+  width: clamp(399px, 50vw, 996px);
+}
+
+@media (max-width: 1500px) {
+  .hero img {
+     right: -2vw;
+  }
+}
+@media (max-width: 1220px) {
+  .hero img {
+     right: 5px;
+  }
+}
+
+.hero h1 {
+  font-family: var(--montserrat-bold);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 125%;
+  letter-spacing: 3%;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.hero span {
+  font-size: 40px;
+}
+
+.hero span:last-child {
+  margin-left: 16px;
+}
+
+.hero-description {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  font-size: 18px;
+  margin-left: 90px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.hero-btn {
+  margin-left: 90px;
+  padding: 20px 30px;
+  background-color: var(--accent);
+  font-family: var(--montserrat-bold);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 3%;
+  text-align: center;
+  text-transform: uppercase;
+  transition: var(--tr);
+}
+
+.hero-btn:hover {
+  background-color: var(--dark);
+  color: var(--accent);
+}
+
+.hero-arrow {
+  background-image: url(../icons/[SLIV.SITE]\ Arrow.svg);
+  width: 52px;
+  height: 55px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Schedule */
+
+.schedule {
+  margin-top: 158px;
+  margin-bottom: 162px;
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 38px;
+}
+
+.schedule-title {
+  font-family: var(--montserrat-bold);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 125%;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.schedule-date {
+  font-family: var(--montserrat-bold);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 125%;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 309px 73px 281px;
+  grid-template-areas: "a b c" "d b f" "d e f";
+  gap: 20px;
+}
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #000;
+  padding: 20px 30px;
+  transition: var(--tr);
+}
+
+.grid-item:hover {
+  background: linear-gradient(180.00deg, rgb(251, 241, 56),rgba(253, 249, 182, 0.45) 100%);
+  border-color: transparent;
+}
+
+.grid-item:nth-child(1) {
+  grid-area: a;
+}
+.grid-item:nth-child(2) {
+  grid-area: b;
+}
+.grid-item:nth-child(3) {
+  grid-area: c;
+}
+.grid-item:nth-child(4) {
+  grid-area: d;
+}
+.grid-item:nth-child(5) {
+  grid-area: e;
+}
+.grid-item:nth-child(6) {
+  grid-area: f;
+}
+
+.grid-item p {
+  font-family: var(--montserrat-bold);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 125%;
+  letter-spacing: 0;
+  text-align: left;
+  margin: 0;
+}
+
+.item-span {
+  color: #010101;
+  text-align: right;
+  font-size: 18px;
+  font-weight: 400px;
+  line-height: 150%;
+  letter-spacing: 0;
+  opacity: 0.7;
+}
+
+.grid-img {
+  margin-bottom: 40px;
+}
+
+.body {
+  background-image: url(../icons/[SLIV.SITE]\ body.svg);
+  width: 65px;
+  height: 65px;
+}
+
+.bottle {
+  background-image: url(../icons/[SLIV.SITE]\ bottle.svg);
+  width: 42px;
+  height: 85px;
+}
+
+.dumbbell {
+  background-image: url(../icons/[SLIV.SITE]\ dumbbell.svg);
+  width: 91px;
+  height: 50px;
+}
+
+.jump {
+  background-image: url(../icons/[SLIV.SITE]\ jump.svg);
+  width: 67px;
+  height: 107px;
+}
+
+.heart {
+  background-image: url(../icons/[SLIV.SITE]\ heart.svg);
+  width: 65px;
+  height: 61px;
+}
+
+.weight {
+  background-image: url(../icons/[SLIV.SITE]\ weight.svg);
+  width: 58px;
+  height: 66px;
+}
+
+@media (max-width: 1000px) {
+  .schedule-grid {
+     grid-template-columns: repeat(2, 1fr);
+     grid-template-rows: repeat(3, 224px);
+     grid-template-areas: "a b" "c d" "e f";
+  }
+}
+
+/* Mailing */
+
+.mailing {
+  padding: 80px 0px;
+  width: 100%;
+  background-color: var(--light);
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.mailing-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mailing-title {
+  display: inline;
+  font-family: var(--montserrat-bold);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 49px;
+  letter-spacing: 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+}
+
+.mailing-title::before {
+  content: "";
+  background-image: url(../icons/Pattern.svg);
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: -31px;
+  left: -59px;
+  z-index: -1;
+}
+
+/* Form */
+
+.form {
+  max-width: 620px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+}
+.form > div {
+  flex-basis: calc(100% - 225px - 20px);
+}
+
+.checkbox:checked,
+.checkbox:not(:checked){
+  position: absolute;
+  left:-9999px;
+}
+.checkbox:checked + label,
+.checkbox:not(:checked) + label{
+  position: relative;
+  padding-left: 35px;
+  cursor:pointer;
+}
+/* Стили для псевдоэлемента before с фоном и обводкой, когда пункт активен */
+.checkbox:checked + label::before{
+  content:'';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  left: 0;
+  top: calc(50% - 10px);
+  background-color: #2B3541;
+  border-radius: 0px;
+  border: 2px solid #2B3541;
+}
+
+/* Стили для псевдоэлемента after с изображением, когда пункт активен */
+.checkbox:checked + label::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: all .2s ease;
+  opacity: 1;
+  left: 0px;
+  top: -3px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../icons/[SLIV.SITE]\ check_box.svg);
+}
+
+/* Стили для псевдоэлемента before с фоном и обводкой, когда пункт НЕ активен */
+.checkbox:not(:checked) + label::before{
+  content:'';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left:0;
+  top:calc(50% - 10px);
+  opacity: 1;
+  background-color: transparent;
+  border-radius: 0px;
+  border: 2px solid #2B3541;
+}
+
+/* Стили для псевдоэлемента after с изображением, когда пункт НЕ активен */
+.checkbox:not(:checked) + label::after{
+  content:'';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  transition: all .2s ease;
+  opacity: 1;
+  left: 4px;
+  top: calc(50% - 6px);
+  background-position: 0 -12px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../icons/[SLIV.SITE]\ check\ box\ empty.svg);
+}
+.radio:checked + label::before{
+  border-radius: 100%;
+}
+
+.input-email {
+  height: 26px;
+  width: 332px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+  border: none;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.form button {
+  width: 225px;
+  height: 65px;
+  background-color: var(--accent);
+  font-family: var(--montserrat-bold);
+  font-size: 16px;
+  line-height: 15%;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: var(--tr);
+}
+
+.form button:hover {
+  background-color: var(--dark);
+  color: var(--accent);
+}
+
+.label {
+  color: rgba(43, 53, 65, 0.5);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.personal-data {
+  color: rgba(43, 53, 65, 0.5);
+  text-decoration: underline;
+  transition: var(--tr);
+}
+
+.personal-data:hover {
+  color: rgba(43, 53, 65, 1);
+}
+
+/* About */
+
+.about {
+  margin: 160px 0px;
+}
+
+.about-main {
+  display: flex;
+  gap: 77px;
+}
+
+.trainer-img {
+  max-width: 581px;
+}
+
+.about-us h4 {
+  font-family: var(--montserrat-bold);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 125%;
+  letter-spacing: 0;
+  margin-top: 0;
+  margin-bottom: 19px;
+}
+
+.about-us p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.about-us button {
+  background-color: var(--accent);
+  padding: 20px 50px;
+  font-family: var(--montserrat-bold);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 35px;
+  cursor: pointer;
+  border: none;
+  transition: var(--tr);
+}
+
+.about-us button:hover {
+  background-color: var(--dark);
+  color: var(--accent);
+}
+
+.advantages {
+  display: flex;
+  list-style-type: none;
+  margin-bottom: 0;
+  margin-top: 80px;
+  padding: 0;
+  gap: 67px;
+}
+
+li > h5 {
+  font-family: var(--montserrat-bold);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 125%;
+  letter-spacing: 0;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+li > p {
+  margin: 0;
+  opacity: 0.6;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+/* Footer */
+
+.footer {
+  width: 100%;
+  background-color: var(--light);
+  padding-top: 52px;
+  padding-bottom: 25px;
+  margin: 0;
+}
+
+.footer-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 92px;
+  margin-bottom: 20px;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copyright > p {
+  opacity: 0.3;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.blok {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px;
+}
+
+.blok p {
+  opacity: 0.3;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.blok a {
+  opacity: 0.3;
+  color: var(--dark);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-decoration: underline;
+  transition: var(--tr);
+}
+
+.blok a:hover {
+  opacity: 1;
+}
+
+.modal {
+  display: none;
+}
+
+/* Media */
+
+@media (max-width: 1140px) {
+  .header-wrapper {
+    gap: 38px;
+    padding-top: 35px;
+    padding-bottom: 40px;
+  }
+  .logo {
+    z-index: 3;
+  }
+  .nav {
+    display: none;
+  }
+  .burger-menu {
+    display: flex;
+    flex-grow: 1;
+  }
+  .nav._modal {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .nav-link {
+    line-height: 64px;
+  }
+  .nav-link::after {
+    display: none;
+  }
+  .nav-link:not(:last-child) {
+    border-bottom: 1px solid rgba(43, 53, 65, 0.2);
+  }
+  .modal {
+    display: block;
+    width: 100%;
+    background-color: var(--light);
+    padding: 40px 15px;
+    position: absolute;
+    top: -400px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+    transition: var(--tr);
+    z-index: 2;
+    padding-top: 93px;
+    padding-bottom: 20px;
+  }
+  .modal-close {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../icons/modal-close.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
