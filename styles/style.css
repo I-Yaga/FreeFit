@@ -26,7 +26,12 @@ body {
   
 a {
     text-decoration: none;
+    color: var(--dark);
   }
+
+p {
+  margin: 0;
+}
 
 .container {
     width: 100%;
@@ -404,13 +409,23 @@ a {
 /* Form */
 
 .form {
+  width: 100%;
   max-width: 620px;
   margin: 0 auto;
   display: flex;
-  gap: 20px;
+  gap: 40px;
 }
 .form > div {
   flex-basis: calc(100% - 225px - 20px);
+}
+
+.label {
+  color: rgba(43, 53, 65, 0.5);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: left;
 }
 
 .checkbox:checked,
@@ -488,24 +503,26 @@ a {
 }
 
 .input-email {
-  height: 26px;
-  width: 332px;
+  width: 100%;
+  max-width: 352px;
+  height: 65px;
   font-size: 18px;
   font-weight: 400;
   line-height: 150%;
   letter-spacing: 0;
   border: none;
-  padding: 20px;
+  padding-left: 20px;
   margin-bottom: 10px;
 }
 
 .form button {
-  width: 225px;
+  width: 100%;
+  max-width: 225px;
   height: 65px;
   background-color: var(--accent);
   font-family: var(--montserrat-bold);
   font-size: 16px;
-  line-height: 15%;
+  line-height: 150%;
   text-align: center;
   text-transform: uppercase;
   border: none;
@@ -516,15 +533,6 @@ a {
 .form button:hover {
   background-color: var(--dark);
   color: var(--accent);
-}
-
-.label {
-  color: rgba(43, 53, 65, 0.5);
-  font-size: 11px;
-  font-weight: 400;
-  line-height: 150%;
-  letter-spacing: 0;
-  text-align: left;
 }
 
 .personal-data {
@@ -548,8 +556,14 @@ a {
   gap: 77px;
 }
 
-.trainer-img {
-  max-width: 581px;
+.trainer {
+  height: 336px;
+  width: 100%;
+  flex-basis: 581px;
+  background-image: url(../images/@1x/[SLIV.SITE]\ trainer.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 .about-us h4 {
@@ -563,6 +577,7 @@ a {
 }
 
 .about-us p {
+  max-width: 483px;
   font-size: 18px;
   font-weight: 400;
   line-height: 150%;
@@ -665,7 +680,6 @@ li > p {
 }
 
 .blok a {
-  opacity: 0.3;
   color: var(--dark);
   font-size: 14px;
   font-weight: 400;
@@ -683,7 +697,7 @@ li > p {
   display: none;
 }
 
-/* Media */
+/* Tablet Media */
 
 @media (max-width: 1140px) {
   .header-wrapper {
@@ -744,5 +758,111 @@ li > p {
     position: absolute;
     top: 20px;
     right: 20px;
+  }
+  .hero {
+    align-items: start;
+  }
+  .hero h1 {
+    font-size: 26px;
+  }
+  .hero span {
+    font-size: 26px;
+  }
+  .hero-description {
+    margin-top: 16px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    margin-left: 0;
+}
+  .hero-btn {
+    margin: 0;
+  }
+  .hero-arrow {
+    bottom: 145px;
+  }
+  .about-main {
+    gap: 38px;
+  }
+  .advantages {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 43px;
+    column-gap: 0;
+  }
+  .advantages li {
+    max-width: 252px;
+  }
+  .footer {
+    padding: 20px 0px;
+  }
+  .footer-wrapper {
+    justify-content: space-between;
+    margin: 0;
+}
+  .blok p {
+    text-align: right;
+    font-size: 10px;
+  }
+  .blok a {
+    font-size: 10px;
+  }
+  .copyright {
+    justify-content: end;
+  }
+  .copyright > p {
+    display: none;
+  }
+  .email._mobile-footer {
+    display: none;
+  }
+  .mobile-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Mobile Phone Media */
+
+@media (max-width: 680px) {
+  .hero-text {
+    flex-basis: 100%;
+  }
+  .hero-btn {
+    display: block;
+  }
+  .hero-bg {
+    display: none;
+  }
+  .hero img {
+    display: none;
+  }
+  .hero-arrow {
+    display: none;
+  }
+  .schedule {
+    margin-top: 76px;
+  }
+  .schedule-header {
+    margin-bottom: 20px;
+  }
+  .schedule-title {
+    font-size: 26px;
+  }
+  .schedule-date {
+    font-size: 16px;
+  }
+  .schedule-grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 114px);
+    grid-template-areas: "a" "b" "c" "d" "e" "f";
+}
+  .grid-item {
+    padding: 12px;
+  }
+  .grid-img {
+    width: 60%;
+    background-repeat: no-repeat;
   }
 }
