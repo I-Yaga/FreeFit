@@ -311,7 +311,7 @@ p {
   color: #010101;
   text-align: right;
   font-size: 18px;
-  font-weight: 400px;
+  font-weight: 400;
   line-height: 150%;
   letter-spacing: 0;
   opacity: 0.7;
@@ -363,6 +363,9 @@ p {
      grid-template-rows: repeat(3, 224px);
      grid-template-areas: "a b" "c d" "e f";
   }
+  .grid-img {
+    margin-bottom: 30px;
+  }
 }
 
 /* Mailing */
@@ -401,9 +404,11 @@ p {
   width: 80px;
   height: 80px;
   position: absolute;
-  top: -31px;
-  left: -59px;
+  top: -24px;
+  left: -42px;
   z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Form */
@@ -413,7 +418,7 @@ p {
   max-width: 620px;
   margin: 0 auto;
   display: flex;
-  gap: 40px;
+  gap: 20px;
 }
 .form > div {
   flex-basis: calc(100% - 225px - 20px);
@@ -447,7 +452,8 @@ p {
   height: 16px;
   opacity: 1;
   left: 0;
-  top: calc(50% - 10px);
+  /* top: calc(50% - 10px); */
+  top: 0;
   background-color: #2B3541;
   border-radius: 0px;
   border: 2px solid #2B3541;
@@ -462,7 +468,8 @@ p {
   transition: all .2s ease;
   opacity: 1;
   left: 0px;
-  top: -3px;
+  /* top: -3px; */
+  top: 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(../icons/[SLIV.SITE]\ check_box.svg);
@@ -475,7 +482,7 @@ p {
   width: 16px;
   height: 16px;
   left:0;
-  top:calc(50% - 10px);
+  /* top:calc(50% - 10px); */
   opacity: 1;
   background-color: transparent;
   border-radius: 0px;
@@ -491,7 +498,8 @@ p {
   transition: all .2s ease;
   opacity: 1;
   left: 4px;
-  top: calc(50% - 6px);
+  /* top: calc(50% - 6px); */
+  top: 0;
   background-position: 0 -12px;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -504,7 +512,7 @@ p {
 
 .input-email {
   width: 100%;
-  max-width: 352px;
+  max-width: 372px;
   height: 65px;
   font-size: 18px;
   font-weight: 400;
@@ -513,6 +521,24 @@ p {
   border: none;
   padding-left: 20px;
   margin-bottom: 10px;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.input-email:focus {
+  outline: 1px solid var(--accent);
+}
+
+.input-email:focus-visible {
+  outline: 1px solid var(--accent);
+}
+
+.input-email:invalid {
+  outline: 1px solid #AE0303;
+}
+
+.agreement {
+  display: flex;
 }
 
 .form button {
@@ -826,6 +852,12 @@ li > p {
 /* Mobile Phone Media */
 
 @media (max-width: 680px) {
+  .logo {
+    max-width: 78px;
+  }
+  .email {
+    font-size: 14px;
+  }
   .hero-text {
     flex-basis: 100%;
   }
@@ -843,6 +875,7 @@ li > p {
   }
   .schedule {
     margin-top: 76px;
+    margin-bottom: 76px;
   }
   .schedule-header {
     margin-bottom: 20px;
@@ -852,17 +885,108 @@ li > p {
   }
   .schedule-date {
     font-size: 16px;
+    margin-top: 7px;
+    text-align: right;
   }
   .schedule-grid {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(6, 114px);
-    grid-template-areas: "a" "b" "c" "d" "e" "f";
+    grid-template-areas: "a" "d" "b" "e" "c" "f";
 }
   .grid-item {
     padding: 12px;
+    flex-direction: row-reverse;
   }
   .grid-img {
-    width: 60%;
-    background-repeat: no-repeat;
+    margin-bottom: 12px;
+  }
+  .item-span {
+    font-size: 14px;
+  }
+  .grid-item p {
+    font-size: 14px;
+  }
+  .item-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .img1 {
+    max-width: 39px;
+    max-height: 39px;
+  }
+  .img2 {
+    max-width: 23px;
+    max-height: 45px;
+  }
+  .img3 {
+    max-width: 46px;
+    max-height: 25px;
+  }
+  .img4 {
+    max-width: 34px;
+    max-height: 53px;
+  }
+  .img5 {
+    max-width: 39px;
+    max-height: 37px;
+  }
+  .img6 {
+    max-width: 35px;
+    max-height: 40px;
+  }
+  .mailing {
+    padding-top: 57px;
+    padding-bottom: 64px;
+  }
+  .mailing-title {
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 201px;
+  }
+  .mailing-title::before {
+    background-image: url(../icons/Pattern-mobile.svg);
+    left: -34px;
+  }
+  .form {
+    flex-direction: column;
+  }
+  .form button {
+    max-width: 100%;
+  }
+  .input-email {
+    max-width: 100%;
+    width: 100%;
+  }
+  .about {
+    margin: 70px 0px;
+  }
+  .about-us h4 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+  .about-us p {
+    font-size: 16px;
+  }
+  .about-us button {
+    display: block;
+    width: 100%;
+  }
+  .trainer {
+    display: none;
+  }
+  .advantages {
+    display: flex;
+    flex-direction: column;
+    row-gap: 43px;
+    column-gap: 0;
+    margin-top: 57px;
+  }
+  li > h5 {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  li > p {
+    font-size: 16px;
   }
 }
