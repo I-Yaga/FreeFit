@@ -10,9 +10,9 @@ function closeModal() {
 
 // Smooth Scroll
       
-const links = document.querySelectorAll(".hero-arrow");
+const navLink = document.querySelectorAll(".nav-link");
 
-for (const link of links) {
+for (const link of navLink) {
 link.addEventListener("click", clickHandler);
 }
 
@@ -23,4 +23,10 @@ const href = this.getAttribute("href");
 document.querySelector(href).scrollIntoView({
     behavior: "smooth"
 });
+}
+
+const heroArrow = document.querySelectorAll(".hero-arrow");
+
+for (const link of heroArrow) {
+    link.addEventListener("click", clickHandler);
 }
