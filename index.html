@@ -91,11 +91,11 @@
         <div class="container">
             <div class="mailing-wrapper">
                 <h3 class="mailing-title">Подпишитесь на рассылку</h3>
-                <form action="" class="form">
+                <form action="" class="form" method="post">
                     <div>
-                       <input type="email" class="input-email" placeholder="Ваш e-mail">
+                       <input type="email" class="input-email" placeholder="Ваш e-mail" required id="subscription-email">
                        <div class="agreement">
-                          <input type="checkbox" id="01" class="checkbox">
+                          <input type="checkbox" id="01" class="checkbox" required>
                           <label class="label" for="01">
                             Согласен с обработкой <a href="#" class="personal-data" target="_blank">персональных данных</a>
                           </label>
@@ -103,6 +103,7 @@
                     </div>
                     <button type="submit" class="submit-btn">Подписаться</button>
                  </form>
+                 <p class="subscription-message"></p>
             </div>
         </div>
     </section>

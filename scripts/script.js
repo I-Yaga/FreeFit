@@ -30,3 +30,14 @@ const heroArrow = document.querySelectorAll(".hero-arrow");
 for (const link of heroArrow) {
     link.addEventListener("click", clickHandler);
 }
+
+// Form
+
+let form = document.querySelector('.form');
+let email = document.querySelector('.input-email');
+let message = document.querySelector('.subscription-message');
+
+form.onsubmit = function(evt) {
+    evt.preventDefault();
+    message.textContent = 'Адрес ' + email.value + ' добавлен в список получателей рассылки.';
+};
